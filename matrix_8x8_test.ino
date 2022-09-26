@@ -82,15 +82,16 @@ void displayBufferAdd(int column, byte row_byte = 0, int buffer_select = 0) {
   
 }
 
+/*
 void screenScroll(int direction = 0, int buffer = 0) {
-  /* Scroll the matrix display left (direction = 0), or right (direction = 1)
-  using selected buffer (0:MAIN, 1:BACK, 2:ALL) */
+  // Scroll the matrix display left (direction = 0), or right (direction = 1)
+  // using selected buffer (0:MAIN, 1:BACK, 2:ALL)
   int dir = direction;
   int buf = buffer;
   int* b;
   
 }
-
+*/
 
 void matrixDotTest(int speed = 150) {
   // Test all leds - one at a time, in sequence
@@ -138,5 +139,9 @@ void setup() {
 void loop() {
 		// The main show
   matrixDotTest(500);
-}
+  matrixClear();
+  displayBufferAdd(0, 0b10000001);
+  displayBufferAdd(7, 0b10000001);
+  delay(3000);
 
+}
