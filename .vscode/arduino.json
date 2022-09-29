@@ -1,6 +1,0 @@
-{
-    "sketch": "matrix_8x8_test.ino",
-    "board": "arduino:avr:micro",
-    "port": "COM5",
-    "programmer": "arduino:avrispmkii"
-}
