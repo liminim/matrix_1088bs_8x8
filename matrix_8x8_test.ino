@@ -103,7 +103,7 @@ void matrixDotTest(int speed = 150) {
   
   for (x = 0; x < NUM_COLS; x++) {
     // Set row byte to 00000001, the first bit in the current column
-    r_byte = 1;
+    r_byte = 0b00000001;
     
     for (y = 0; y < NUM_ROWS; y++) {
       // Add the current row byte to the display buffer of col x and draw to the matrix
@@ -115,7 +115,7 @@ void matrixDotTest(int speed = 150) {
       delay(s);
     }
     // Ensure the previous col is clear after last bit
-    buffer[x] = 0;
+    buffer[x] = 0b00000000;
   }
 }
 
@@ -139,9 +139,5 @@ void setup() {
 void loop() {
 		// The main show
   matrixDotTest(500);
-  matrixClear();
-  displayBufferAdd(0, 0b10000001);
-  displayBufferAdd(7, 0b10000001);
-  delay(3000);
 
 }
